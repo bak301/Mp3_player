@@ -98,9 +98,6 @@ namespace BMP3
         }
 
         private async void btnOpenPlaylist_Click(object sender, RoutedEventArgs e) {
-            txtLabelPlaylist.Text = "List of playlist : ";
-            txtCurrentPlaylist.Text = "";
-
             StorageFile f = await ApplicationData.Current.LocalFolder.GetFileAsync("playlist.json");
             string data = await FileIO.ReadTextAsync(f);
             List<Playlist> listPlaylist = JsonConvert.DeserializeObject<List<Playlist>>(data);
